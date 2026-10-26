@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniSwap — Student-to-Student Marketplace</title>
+  <meta name="description" content="UniSwap is Pakistan's first student-only marketplace. Buy, sell, and exchange university essentials affordably within your campus community.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a class="nav-logo" href="#" onclick="navigate('home');return false;">
+        <div class="logo-icon">U</div>
+        <span class="logo-text">UniSwap</span>
+      </a>
+      <div class="nav-center" id="navCenter">
+        <a href="#" onclick="navigate('home');return false;" class="nav-link" data-page="home">Home</a>
+        <a href="#" onclick="navigate('browse');return false;" class="nav-link" data-page="browse">Browse</a>
+        <a href="#" onclick="navigate('sell');return false;" class="nav-link nav-sell" data-page="sell">+ Sell Item</a>
+      </div>
+      <div class="nav-right" id="navAuth"></div>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#" onclick="navigate('home');toggleMenu();return false;" class="mobile-link">🏠 Home</a>
+      <a href="#" onclick="navigate('browse');toggleMenu();return false;" class="mobile-link">🛍️ Browse</a>
+      <a href="#" onclick="navigate('sell');toggleMenu();return false;" class="mobile-link">+ Sell Item</a>
+      <div id="mobileAuth"></div>
+    </div>
+  </nav>
+
+  <!-- Main App Container -->
+  <main id="app" class="app-container"></main>
+
+  <!-- Footer -->
+  <footer class="footer" id="siteFooter">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="logo-icon small">U</div>
+          <span>UniSwap</span>
+        </div>
+        <p>Pakistan's first student-only marketplace. Buy, sell, and exchange university essentials within your campus community.</p>
+        <div class="footer-badges">
+          <span class="badge-pill">🎓 Students Only</span>
+          <span class="badge-pill">🔒 Verified Users</span>
+          <span class="badge-pill">🇵🇰 Made in Pakistan</span>
+        </div>
+      </div>
+      <div class="footer-links-grid">
+        <div class="footer-col">
+          <h5>Marketplace</h5>
+          <a href="#" onclick="navigate('browse');return false;">Browse All Items</a>
+          <a href="#" onclick="navigate('sell');return false;">List an Item</a>
+          <a href="#" onclick="appState.browseFilters.category='textbooks';navigate('browse');return false;">Textbooks</a>
+          <a href="#" onclick="appState.browseFilters.category='laptops';navigate('browse');return false;">Laptops</a>
+        </div>
+        <div class="footer-col">
+          <h5>Account</h5>
+          <a href="#" onclick="navigate('login');return false;">Login</a>
+          <a href="#" onclick="navigate('register');return false;">Register Free</a>
+          <a href="#" onclick="navigate('dashboard');return false;">Dashboard</a>
+        </div>
+        <div class="footer-col">
+          <h5>Support</h5>
+          <a href="#">About Us</a>
+          <a href="#">Contact Us</a>
+          <a href="#">Help Center</a>
+          <a href="#">Safety Tips</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 UniSwap — Student-to-Student Marketplace. All rights reserved.</p>
+      <p class="footer-disclaimer">⚠️ Prototype: Verification is simulated for demonstration. Real student ID verification will be implemented in production.</p>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Modal -->
+  <div class="modal-backdrop" id="modalBackdrop" onclick="closeModal()">
+    <div class="modal-box" id="modalBox" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="closeModal()">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
