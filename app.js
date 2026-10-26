@@ -167,8 +167,6 @@ function renderHome(){
       <div class="hero-stats">
         <div class="stat-item"><span class="stat-number">2,400+</span><span class="stat-label">Items Listed</span></div>
         <div class="stat-divider"></div>
-        <div class="stat-item"><span class="stat-number">850+</span><span class="stat-label">Verified Students</span></div>
-        <div class="stat-divider"></div>
         <div class="stat-item"><span class="stat-number">25+</span><span class="stat-label">Universities</span></div>
       </div>
     </div>
